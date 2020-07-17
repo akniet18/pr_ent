@@ -39,7 +39,7 @@ class question_variant(models.Model):
         return self.text
 
 class Question(models.Model):
-    question = models.TextField()
+    text = models.TextField()
     subject = models.ForeignKey("Subject", on_delete=models.CASCADE, related_name="test_subject")
 
     def __str__(self):

@@ -20,8 +20,8 @@ class VariantSer(serializers.ModelSerializer):
         fields = "__all__"
 
 class TestSer(serializers.ModelSerializer):
-    test_variant = VariantSer(many=True)
-    test_photo = PhotoSer(many=True)
+    question_variant = VariantSer(many=True)
+    question_photo = PhotoSer(many=True)
     class Meta:
         model = Question()
         fields = "__all__"
