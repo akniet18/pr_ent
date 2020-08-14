@@ -1,0 +1,86 @@
+[
+  {
+  	"model": "entapp.Subject",
+    "pk": 1,
+    "fields": {
+    	"name": "Математикалық сауаттылық"
+    }
+  },
+  {	
+  	"model": "entapp.Subject",
+    "pk": 2,
+    "fields": {
+    	"name": "Оқу сауаттылығы"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 3,
+    "fields": {
+    	"name": "Қазақстан тарихы"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 4,
+    "fields": {
+    	"name": "Физика"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 5,
+    "fields": {
+    	"name": "Математика"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 6,
+    "fields": {
+    	"name": "Биалогия"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 7,
+    "fields": {
+    	"name": "Химия"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 8,
+    "fields": {
+    	"name": "Дүниежүзі тарихы"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 9,
+    "fields": {
+    	"name": "Құқық"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 10,
+    "fields": {
+    	"name": "География"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 11,
+    "fields": {
+    	"name": "Қазақ тілі мен әдебиет"
+    }
+  },
+  {
+  	"model": "entapp.Subject",
+    "pk": 12,
+    "fields": {
+    	"name": "Орыс тілі мен әдебиет"
+    }
+  }
+]

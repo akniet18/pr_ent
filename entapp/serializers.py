@@ -30,3 +30,8 @@ class TestSer(serializers.ModelSerializer):
 class AnswerOneSer(serializers.Serializer):
     test_id = serializers.CharField()
     answer_id = serializers.CharField()
+
+
+class passEntSer(serializers.Serializer):
+    sub_id1 = serializers.IntegerField()
+    sub_id2 = serializers.IntegerField()

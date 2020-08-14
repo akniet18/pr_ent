@@ -6,25 +6,77 @@ from rest_framework.views import APIView
 from rest_framework import permissions
 from rest_framework.authentication import TokenAuthentication
 from django.contrib.auth.models import User
+from django.db.models import Count
+import random
+from django.http import JsonResponse
+import json
 
 
-class oneSubject(APIView):
+def get_random_question(subject, default=False):
+    if default:
+        questions = list(subject.test_subject.all())
+        random.shuffle(questions)
+        questions = questions[:20]
+        return questions
+    else:
+        questions1 = list(subject.test_subject.annotate(number_of_answers=Count('question_variant')).filter(number_of_answers = 5))
+        random.shuffle(questions1)
+        questions1 = questions1[:20]
+        questions2 = list(subject.test_subject.annotate(number_of_answers=Count('question_variant')).filter(number_of_answers = 8))
+        random.shuffle(questions2)
+        questions2 = questions2[:10]
+        questions = questions1 + questions2
+        return questions
+
+
+class pass_oneSubject(APIView):
     permission_classes = [permissions.AllowAny,]
 
     def get(self, request, id):
         subject = Subject.objects.get(id = id)
-        tests = subject.test_subject.all()
-        s = TestSer(tests, many=True)
+        questions = None
+        if id=='1' or id == '2' or id == '3':
+            questions = get_random_question(subject, True)
+        else:
+            questions = get_random_question(subject)
+        s = TestSer(questions, many=True)
         return Response(s.data)
 
 
-class oneAnswer(APIView):
+class pass_ENT(APIView):
     permission_classes = [permissions.AllowAny,]
 
     def post(self, request):
-        s = AnswerOneSer(data=request.data)
+        s = passEntSer(data = request.data)
         if s.is_valid():
-            variant = Variant.objects.get(id=s.validated_data['answer_id'], test_id = s.validated_data['test_id'])
-            return Response({'status': variant.is_right})
-        else: 
+            # default subjects
+            def_sbj1 = Subject.objects.get(id = 1)
+            def_sbj2 = Subject.objects.get(id = 2)
+            def_sbj3 = Subject.objects.get(id = 3)
+            math_log = get_random_question(def_sbj1, True)
+            math_log = TestSer(math_log, many=True)
+            history = get_random_question(def_sbj2, True)
+            history = TestSer(history, many=True)
+            literacy = get_random_question(def_sbj3, True)
+            literacy = TestSer(literacy, many=True)
+            # choosen subjects
+            # 1
+            sub_id1 = s.validated_data['sub_id1']
+            subject = Subject.objects.get(id = sub_id1)
+            first_sbj = get_random_question(subject)
+            first_sbj = TestSer(first_sbj, many=True)
+            # 2
+            sub_id2 = s.validated_data['sub_id2']
+            subject = Subject.objects.get(id = sub_id2)
+            second_sbj = get_random_question(subject)
+            second_sbj = TestSer(second_sbj, many=True)
+            data = {
+                'math_log': math_log.data,
+                'history': history.data,
+                "literacy": literacy.data,
+                'sub1': first_sbj.data,
+                'sub2': second_sbj.data
+            }
+            return Response(data)
+        else:
             return Response(s.errors)

@@ -2,16 +2,8 @@ from django.db import models
 from datetime import datetime
 
 
-class test_variant(models.Model):
-    variant = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.variant
-
-
 class Subject(models.Model):
     name = models.CharField(max_length=50)
-    variant = models.ForeignKey("test_variant", on_delete=models.CASCADE, related_name="variant_test", null=True)
 
     def __str__(self):
         return self.name
@@ -27,7 +19,7 @@ class TestPhoto(models.Model):
     question = models.ForeignKey("Question", on_delete=models.CASCADE, related_name="question_photo", null=True)
 
     def __str__(self):
-        return self.question.question
+        return self.question.text
 
 
 class question_variant(models.Model):
@@ -43,4 +35,9 @@ class Question(models.Model):
     subject = models.ForeignKey("Subject", on_delete=models.CASCADE, related_name="test_subject")
 
     def __str__(self):
-        return self.question
+        return self.text
+
+    
+    def count_variant(self):
+        al = self.question_variant.all()
+        return len(al)
