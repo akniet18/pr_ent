@@ -15,6 +15,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework import viewsets, generics
 from rest_framework.generics import RetrieveUpdateDestroyAPIView, GenericAPIView, RetrieveUpdateAPIView
 from datetime import datetime
+from entapp.models import *
 # from django_auto_prefetching import AutoPrefetchViewSetMixin
 
 
@@ -77,5 +78,65 @@ class Register(APIView):
                 return Response({'key': token.key, 'uid': uid, 'status': 'ok'})
             else:
                 return Response({'status': 'otp error'})
+        else:
+            return Response(s.errors)
+
+
+class historyView(APIView):
+    permission_classes = (permissions.IsAuthenticated, )
+
+    def get(self, request):
+        queryset = history.objects.filter(user = request.user)
+        s = historySerializer(queryset, many=True)
+        return Response(s.data)
+
+    def post(self, request):
+        s = historySerializerCreate(data=request.data)
+        if s.is_valid():
+            right_answers = s.validated_data['right_answers']
+            subject = s.validated_data['subject']
+            count_of_question = 0
+            subject_name = ""
+            if subject == 1 or subject == 2 or subject == 3:
+                count_of_question = 20
+                subject_name = Subject.objects.get(id = subject).name
+            elif subject == "ent":
+                count_of_question = 140
+                subject_name = "ent"
+            else:
+                count_of_question = 40
+                subject_name = Subject.objects.get(id = subject).name
+            history.objects.create(
+                user = request.user,
+                right_answers = right_answers,
+                count_of_questions = count_of_question,
+                name = subject_name
+            )
+            return Response({'status': "ok"})
+        else:
+            return Response(s.errors)
+
+
+class UserView(APIView):
+    permission_classes = (permissions.IsAuthenticated, )
+
+    def get(self, request, id):
+        queryset = User.objects.get(id=id)
+        s = UserSerializer(queryset)
+        return Response(s.data)
+
+    def post(self, request, id):
+        s = UserSerializer(data=request.data)
+        if s.is_valid():
+            user = User.objects.get(id=id)
+            user.first_name = s.validated_data.get('first_name', user.first_name)
+            user.last_name = s.validated_data.get('last_name', user.last_name)
+            user.uin = s.validated_data.get('uin', user.uin)
+            email = s.validated_data.get('email', None)
+            if email != user.email and email:
+                user.email = email
+            user.save()
+            s = UserSerializer(user)
+            return Response(s.data)
         else:
             return Response(s.errors)

@@ -3,5 +3,7 @@ from .views import *
 
 urlpatterns = [
     path('phone/otp/', PhoneCode.as_view()),
-    path('register/', Register.as_view())
+    path('register/', Register.as_view()),
+    path("history", historyView.as_view()),
+    path('<id>', UserView.as_view())
 ]

@@ -1,7 +1,5 @@
 from rest_framework import serializers
-from django.contrib.auth import get_user_model
 from .models import *
-User = get_user_model()
 
 
 class PhoneS(serializers.Serializer):
@@ -11,3 +9,19 @@ class PhoneS(serializers.Serializer):
 class RegisterSerializer(serializers.Serializer):
     phone = serializers.CharField(max_length=15)
     code = serializers.CharField()
+
+
+class historySerializerCreate(serializers.Serializer):
+    subject = serializers.CharField()
+    right_answers = serializers.CharField()
+
+class historySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = history
+        fields = "__all__"
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ("first_name", 'last_name', 'email', 'uin')

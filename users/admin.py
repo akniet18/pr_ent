@@ -15,8 +15,8 @@ class UserAdmin(BaseUserAdmin):
     list_filter = ('phone', 'is_staff')
     fieldsets = (
         (None, {"fields": ('phone', 'password'),}),
-        ("Personal info", {"fields": ('is_worker', 'is_customer', 'current_role', 'nickname', 'email','avatar', 
-                        'about', 'birth_date',
+        ("Personal info", {"fields": ('nickname', 'email','avatar', 'uin',
+                        'first_name', 'last_name', 'birth_date',
                         'created_at', 'gender', 'like', 'dislike',
                         'last_online')}),
         ("Permissions", {"fields": ('is_moder', 'is_staff', 'is_active')})
@@ -43,5 +43,6 @@ class UserAdmin(BaseUserAdmin):
     #     return super(UserAdmin).get_inline_instances(request, obj=obj)
 
 admin.site.register(User, UserAdmin)
+admin.site.register(history)
 admin.site.register(PhoneOTP)
 

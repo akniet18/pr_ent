@@ -51,12 +51,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         (GENDER_FEMALE, _('Female')),
     )
 
-    CUSTOMER = 'CS'
-    WORKER = 'WR'
-    CURRENT_ROLE = [
-        (CUSTOMER, 'customer'),
-        (WORKER, 'worker'),
-    ]
+
     # phone_regex = RegexValidator( regex = r'^\+?1?\d{7,12}$',
     # message = "Phone number in the format '+77777777'. Up to 12 digits")
     # phone = models.CharField(max_length=12,validators = [phone_regex], unique=True)
@@ -82,15 +77,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     dislike = models.ManyToManyField("self", blank=True, related_name="dislikes")
 
 
-    # first_name = models.CharField(max_length=255, blank=True, null=True)
-    # last_name = models.CharField(max_length=255, blank=True, null=True)
+    first_name = models.CharField(max_length=255, blank=True, null=True)
+    last_name = models.CharField(max_length=255, blank=True, null=True)
     # middle_name = models.CharField(max_length=255, blank=True, null=True)
 
     # -------------------------------------------------------
-    is_worker = models.BooleanField(default=True)
-    is_customer = models.BooleanField(default=True)
-    current_role = models.CharField(choices=CURRENT_ROLE, default="CS", blank=True, max_length=25)
-
+    uin = models.IntegerField(blank=True, null=True)
     # -------------------------------------------------------
     # role = models.ManyToManyField(SubRole, related_name = "role_user", blank=True)
 
@@ -116,7 +108,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     #                          )
     # rat = models.FloatField(blank=True, null=True)
 
-    about = models.TextField(blank=True, null=True)
 
     # -------------------------------------------------------
     USERNAME_FIELD = 'phone'
@@ -150,3 +141,14 @@ class PhoneOTP(models.Model):
 
     def __str__(self):
         return str(self.phone) + ' is sent ' + str(self.otp)
+
+
+
+class history(models.Model):
+    name = models.CharField(max_length=50)
+    right_answers = models.IntegerField()
+    count_of_questions = models.IntegerField()
+    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="history")
+
+    def __str__(self):
+        return self.name
