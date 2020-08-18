@@ -9,7 +9,7 @@ class Subject(models.Model):
         return self.name
     
 
-def test_photos_dir(instanse, filename):
+def test_photos_dir(instance, filename):
     folder_name = f'{instance.question.subject.text}/{filename}'
     return folder_name
 
