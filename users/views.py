@@ -129,8 +129,8 @@ class UserView(APIView):
         s = UserSerializer(data=request.data)
         if s.is_valid():
             user = User.objects.get(id=id)
-            user.first_name = s.validated_data.get('first_name', user.first_name)
-            user.last_name = s.validated_data.get('last_name', user.last_name)
+            # user.first_name = s.validated_data.get('first_name', user.first_name)
+            user.nickname = s.validated_data.get('nickname', user.nickname)
             user.uin = s.validated_data.get('uin', user.uin)
             email = s.validated_data.get('email', None)
             if email != user.email and email:

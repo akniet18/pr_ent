@@ -24,4 +24,4 @@ class historySerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("first_name", 'last_name', 'email', 'uin')
+        fields = ('nickname', 'email', 'uin')

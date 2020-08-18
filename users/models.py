@@ -82,7 +82,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     # middle_name = models.CharField(max_length=255, blank=True, null=True)
 
     # -------------------------------------------------------
-    uin = models.IntegerField(blank=True, null=True)
+    uin = models.CharField(blank=True, null=True, max_length=12)
     # -------------------------------------------------------
     # role = models.ManyToManyField(SubRole, related_name = "role_user", blank=True)
 
@@ -116,17 +116,6 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return str(self.id) + ", " + self.phone
-
-    # def rating(self):
-    #     sum_r = 0
-    #     rat = 0
-    #     if self.rating_array:
-    #         for i in self.rating_array:
-    #             sum_r += i
-    #             rat = sum_r / len(self.rating_array)
-    #         return rat
-    #     else:
-    #         return rat
 
 
 
