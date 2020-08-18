@@ -10,8 +10,7 @@ class Subject(models.Model):
     
 
 def test_photos_dir(instanse, filename):
-    usrnme = f'{instanse.test.id}'
-    folder_name = f'{instance.test.subject.name}/{usrnme}/{filename}'
+    folder_name = f'{instance.question.subject.text}/{filename}'
     return folder_name
 
 class TestPhoto(models.Model):
