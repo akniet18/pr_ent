@@ -1,0 +1,1062 @@
+[   
+    {
+        "model": "entapp.Question",
+        "pk": 1,
+        "fields": {
+            "text": "Графикте Жерден жоғары лақтырылған дене биіктігінің өзгерісі берілген. Тігінен биіктіктің (метр) мәні, көлденеңінен уақыттың (секунд) мәндері берілген. Лақтырылған соң 4-ші секундтағы дене биіктігін анықтаңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 2,
+        "fields": {
+            "text": "Төрт орындыққа төрт адамды отырғызу тәсілдерінің санын табыңыз. ",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 3,
+        "fields": {
+            "text": "Теледидардың 15%-ға арзандатылғаннан кейінгі бағасы 127500 теңге болды.Теледидардың арзандатылғанға дейінгі бағасын табыңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 4,
+        "fields": {
+            "text": "Себетте 5 алма, 6 апельсин, 8 алмұрат бар. Кездейсоқ таңдалған бір жемістің алма болып шығуының ықтималдығы қандай екенін анықтаңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 5,
+        "fields": {
+            "text": "Ұлдардың біреуін санамағанда ұлдар мен қыздардың сандары бірдей, Қыздардың біреуін санамағанда ұлдар қыздардан екі есеге артық. Ұлдардың санын табыңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 6,
+        "fields": {
+            "text": "Графикте Жерден жоғары лақтырылған дене биіктігінің өзгерісі берілген. Тігінен биіктіктің (метр) мәні, көлденеңінен уақыттың (секунд) мәндері берілген. Лақтырылған соң 4-ші секундтағы дене биіктігін анықтаңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 7,
+        "fields": {
+            "text": "Төрт орындыққа төрт адамды отырғызу тәсілдерінің санын табыңыз. ",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 8,
+        "fields": {
+            "text": "Теледидардың 15%-ға арзандатылғаннан кейінгі бағасы 127500 теңге болды.Теледидардың арзандатылғанға дейінгі бағасын табыңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 9,
+        "fields": {
+            "text": "Себетте 5 алма, 6 апельсин, 8 алмұрат бар. Кездейсоқ таңдалған бір жемістің алма болып шығуының ықтималдығы қандай екенін анықтаңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 10,
+        "fields": {
+            "text": "Ұлдардың біреуін санамағанда ұлдар мен қыздардың сандары бірдей, Қыздардың біреуін санамағанда ұлдар қыздардан екі есеге артық. Ұлдардың санын табыңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 11,
+        "fields": {
+            "text": "Графикте Жерден жоғары лақтырылған дене биіктігінің өзгерісі берілген. Тігінен биіктіктің (метр) мәні, көлденеңінен уақыттың (секунд) мәндері берілген. Лақтырылған соң 4-ші секундтағы дене биіктігін анықтаңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 12,
+        "fields": {
+            "text": "Төрт орындыққа төрт адамды отырғызу тәсілдерінің санын табыңыз. ",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 13,
+        "fields": {
+            "text": "Теледидардың 15%-ға арзандатылғаннан кейінгі бағасы 127500 теңге болды.Теледидардың арзандатылғанға дейінгі бағасын табыңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 14,
+        "fields": {
+            "text": "Себетте 5 алма, 6 апельсин, 8 алмұрат бар. Кездейсоқ таңдалған бір жемістің алма болып шығуының ықтималдығы қандай екенін анықтаңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 15,
+        "fields": {
+            "text": "Ұлдардың біреуін санамағанда ұлдар мен қыздардың сандары бірдей, Қыздардың біреуін санамағанда ұлдар қыздардан екі есеге артық. Ұлдардың санын табыңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 16,
+        "fields": {
+            "text": "Графикте Жерден жоғары лақтырылған дене биіктігінің өзгерісі берілген. Тігінен биіктіктің (метр) мәні, көлденеңінен уақыттың (секунд) мәндері берілген. Лақтырылған соң 4-ші секундтағы дене биіктігін анықтаңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 17,
+        "fields": {
+            "text": "Төрт орындыққа төрт адамды отырғызу тәсілдерінің санын табыңыз. ",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 18,
+        "fields": {
+            "text": "Теледидардың 15%-ға арзандатылғаннан кейінгі бағасы 127500 теңге болды.Теледидардың арзандатылғанға дейінгі бағасын табыңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 19,
+        "fields": {
+            "text": "Себетте 5 алма, 6 апельсин, 8 алмұрат бар. Кездейсоқ таңдалған бір жемістің алма болып шығуының ықтималдығы қандай екенін анықтаңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.Question",
+        "pk": 20,
+        "fields": {
+            "text": "Ұлдардың біреуін санамағанда ұлдар мен қыздардың сандары бірдей, Қыздардың біреуін санамағанда ұлдар қыздардан екі есеге артық. Ұлдардың санын табыңыз.",
+            "subject": 1
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 1,
+        "fields": {
+            "text": "25m",
+            "question": 1,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 2,
+        "fields": {
+            "text": "30m",
+            "question": 1,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 3,
+        "fields": {
+            "text": "35m",
+            "question": 1,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 4,
+        "fields": {
+            "text": "40m",
+            "question": 1,
+            "is_right": true
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 5,
+        "fields": {
+            "text": "45m",
+            "question": 1,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 6,
+        "fields": {
+            "text": "15",
+            "question": 2,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 7,
+        "fields": {
+            "text": "6",
+            "question": 2,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 8,
+        "fields": {
+            "text": "24",
+            "question": 2,
+            "is_right": true
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 9,
+        "fields": {
+            "text": "12",
+            "question": 2,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 10,
+        "fields": {
+            "text": "48",
+            "question": 2,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 11,
+        "fields": {
+            "text": "120000 tenge",
+            "question": 3,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 12,
+        "fields": {
+            "text": "200000 tenge",
+            "question": 3,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 13,
+        "fields": {
+            "text": "140000 tenge",
+            "question": 3,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 14,
+        "fields": {
+            "text": "150000 tenge",
+            "question": 3,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 15,
+        "fields": {
+            "text": "100000 tenge",
+            "question": 3,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 16,
+        "fields": {
+            "text": "3/19",
+            "question": 4,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 17,
+        "fields": {
+            "text": "2/19",
+            "question": 4,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 18,
+        "fields": {
+            "text": "1/5",
+            "question": 4,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 19,
+        "fields": {
+            "text": "5/19",
+            "question": 4,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 20,
+        "fields": {
+            "text": "4/9",
+            "question": 4,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 21,
+        "fields": {
+            "text": "3",
+            "question": 5,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 22,
+        "fields": {
+            "text": "5",
+            "question": 5,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 23,
+        "fields": {
+            "text": "2",
+            "question": 5,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 24,
+        "fields": {
+            "text": "4",
+            "question": 5,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 25,
+        "fields": {
+            "text": "6",
+            "question": 5,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 26,
+        "fields": {
+            "text": "25m",
+            "question": 6,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 27,
+        "fields": {
+            "text": "30m",
+            "question": 6,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 28,
+        "fields": {
+            "text": "35m",
+            "question": 6,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 29,
+        "fields": {
+            "text": "40m",
+            "question": 6,
+            "is_right": true
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 30,
+        "fields": {
+            "text": "45m",
+            "question": 6,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 31,
+        "fields": {
+            "text": "15",
+            "question": 7,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 32,
+        "fields": {
+            "text": "6",
+            "question": 7,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 33,
+        "fields": {
+            "text": "24",
+            "question": 7,
+            "is_right": true
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 34,
+        "fields": {
+            "text": "12",
+            "question": 7,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 35,
+        "fields": {
+            "text": "48",
+            "question": 7,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 36,
+        "fields": {
+            "text": "120000 tenge",
+            "question": 8,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 37,
+        "fields": {
+            "text": "200000 tenge",
+            "question": 8,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 38,
+        "fields": {
+            "text": "140000 tenge",
+            "question": 8,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 39,
+        "fields": {
+            "text": "150000 tenge",
+            "question": 8,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 40,
+        "fields": {
+            "text": "100000 tenge",
+            "question": 8,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 41,
+        "fields": {
+            "text": "3/19",
+            "question": 9,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 42,
+        "fields": {
+            "text": "2/19",
+            "question": 9,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 43,
+        "fields": {
+            "text": "1/5",
+            "question": 9,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 44,
+        "fields": {
+            "text": "5/19",
+            "question": 9,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 45,
+        "fields": {
+            "text": "4/9",
+            "question": 9,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 46,
+        "fields": {
+            "text": "3",
+            "question": 10,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 47,
+        "fields": {
+            "text": "5",
+            "question": 10,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 48,
+        "fields": {
+            "text": "2",
+            "question": 10,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 49,
+        "fields": {
+            "text": "4",
+            "question": 10,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 50,
+        "fields": {
+            "text": "6",
+            "question": 10,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 51,
+        "fields": {
+            "text": "25m",
+            "question": 11,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 52,
+        "fields": {
+            "text": "30m",
+            "question": 11,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 53,
+        "fields": {
+            "text": "35m",
+            "question": 11,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 54,
+        "fields": {
+            "text": "40m",
+            "question": 11,
+            "is_right": true
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 55,
+        "fields": {
+            "text": "45m",
+            "question": 11,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 56,
+        "fields": {
+            "text": "15",
+            "question": 12,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 57,
+        "fields": {
+            "text": "6",
+            "question": 12,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 58,
+        "fields": {
+            "text": "24",
+            "question": 12,
+            "is_right": true
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 59,
+        "fields": {
+            "text": "12",
+            "question": 12,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 60,
+        "fields": {
+            "text": "48",
+            "question": 12,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 61,
+        "fields": {
+            "text": "120000 tenge",
+            "question": 13,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 62,
+        "fields": {
+            "text": "200000 tenge",
+            "question": 13,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 63,
+        "fields": {
+            "text": "140000 tenge",
+            "question": 13,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 64,
+        "fields": {
+            "text": "150000 tenge",
+            "question": 13,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 65,
+        "fields": {
+            "text": "100000 tenge",
+            "question": 13,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 66,
+        "fields": {
+            "text": "3/19",
+            "question": 14,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 67,
+        "fields": {
+            "text": "2/19",
+            "question": 14,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 68,
+        "fields": {
+            "text": "1/5",
+            "question": 14,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 69,
+        "fields": {
+            "text": "5/19",
+            "question": 14,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 70,
+        "fields": {
+            "text": "4/9",
+            "question": 14,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 71,
+        "fields": {
+            "text": "3",
+            "question": 15,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 72,
+        "fields": {
+            "text": "5",
+            "question": 15,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 73,
+        "fields": {
+            "text": "2",
+            "question": 15,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 74,
+        "fields": {
+            "text": "4",
+            "question": 15,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 75,
+        "fields": {
+            "text": "6",
+            "question": 15,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 76,
+        "fields": {
+            "text": "25m",
+            "question": 16,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 77,
+        "fields": {
+            "text": "30m",
+            "question": 16,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 78,
+        "fields": {
+            "text": "35m",
+            "question": 16,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 79,
+        "fields": {
+            "text": "40m",
+            "question": 16,
+            "is_right": true
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 80,
+        "fields": {
+            "text": "45m",
+            "question": 16,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 81,
+        "fields": {
+            "text": "15",
+            "question": 17,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 82,
+        "fields": {
+            "text": "6",
+            "question": 17,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 83,
+        "fields": {
+            "text": "24",
+            "question": 17,
+            "is_right": true
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 84,
+        "fields": {
+            "text": "12",
+            "question": 17,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 85,
+        "fields": {
+            "text": "48",
+            "question": 17,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 86,
+        "fields": {
+            "text": "120000 tenge",
+            "question": 18,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 87,
+        "fields": {
+            "text": "200000 tenge",
+            "question": 18,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 88,
+        "fields": {
+            "text": "140000 tenge",
+            "question": 18,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 89,
+        "fields": {
+            "text": "150000 tenge",
+            "question": 18,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 90,
+        "fields": {
+            "text": "100000 tenge",
+            "question": 18,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 91,
+        "fields": {
+            "text": "3/19",
+            "question": 19,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 92,
+        "fields": {
+            "text": "2/19",
+            "question": 20,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 93,
+        "fields": {
+            "text": "1/5",
+            "question": 20,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 94,
+        "fields": {
+            "text": "5/19",
+            "question": 20,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 95,
+        "fields": {
+            "text": "4/9",
+            "question": 20,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 96,
+        "fields": {
+            "text": "3",
+            "question": 20,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 97,
+        "fields": {
+            "text": "5",
+            "question": 20,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 98,
+        "fields": {
+            "text": "2",
+            "question": 20,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 99,
+        "fields": {
+            "text": "4",
+            "question": 20,
+            "is_right": false
+        }
+    },
+    {
+        "model": "entapp.question_variant",
+        "pk": 100,
+        "fields": {
+            "text": "6",
+            "question": 20,
+            "is_right": false
+        }
+    }
+]
