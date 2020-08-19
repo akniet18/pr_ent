@@ -91,27 +91,40 @@ class historyView(APIView):
         return Response(s.data)
 
     def post(self, request):
-        s = historySerializerCreate(data=request.data)
+        s = historySerializer(data=request.data)
         if s.is_valid():
             right_answers = s.validated_data['right_answers']
-            subject = s.validated_data['subject']
+            subject1 = s.validated_data['subject1']
+            subject2 = s.validated_data.get('subject2', None)
             count_of_question = 0
             subject_name = ""
-            if subject == 1 or subject == 2 or subject == 3:
-                count_of_question = 20
-                subject_name = Subject.objects.get(id = subject).name
-            elif subject == "ent":
-                count_of_question = 140
-                subject_name = "ent"
+            if subject2:
+                history.objects.create(
+                    user = request.user,
+                    right_answers = right_answers,
+                    count_of_questions = 140,
+                    type_test = "ent",
+                    subject1 = Subject.objects.get(id = subject1).name,
+                    subject2 = Subject.objects.get(id = subject2).name
+                )
+            elif (subject1 == '1' or subject1 == '2' or subject1 == '3') and subject2 == None:
+                history.objects.create(
+                    user = request.user,
+                    right_answers = right_answers,
+                    count_of_questions = 20,
+                    type_test = "OneSubject",
+                    subject1 = Subject.objects.get(id = subject1).name,
+                    # subject2 = Subject.objects.get(id = subject2).name
+                )
             else:
-                count_of_question = 40
-                subject_name = Subject.objects.get(id = subject).name
-            history.objects.create(
-                user = request.user,
-                right_answers = right_answers,
-                count_of_questions = count_of_question,
-                name = subject_name
-            )
+                history.objects.create(
+                    user = request.user,
+                    right_answers = right_answers,
+                    count_of_questions = 40,
+                    type_test = "OneSubject",
+                    subject1 = Subject.objects.get(id = subject1).name,
+                    # subject2 = Subject.objects.get(id = subject2).name
+                )
             return Response({'status': "ok"})
         else:
             return Response(s.errors)
@@ -140,3 +153,29 @@ class UserView(APIView):
             return Response(s.data)
         else:
             return Response(s.errors)
+
+
+import ssl, smtplib
+class FeedBackView(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request):
+        s = FeedbackSer(data=request.data)
+        if s.is_valid():
+            port = 465  # For starttls
+            smtp_server = "smtp.gmail.com"
+            sender_email = "bilimcenter20@gmail.com"
+            receiver_email = "akniet1805@gmail.com"
+            password = "Bilim20centre20"
+            message = s.validated_data['text']
+            if request.user.is_authenticated:
+                message += "\n\n" + "phone: " + request.user.phone + "\nemail: " + request.user.email
+            
+            context = ssl.create_default_context()
+            with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+                server.login(sender_email, password)
+                server.sendmail(sender_email, receiver_email, message)
+            return Response({'status': 'ok'})
+        else:
+            return Response(s.errors)
+

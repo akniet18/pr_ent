@@ -134,10 +134,12 @@ class PhoneOTP(models.Model):
 
 
 class history(models.Model):
-    name = models.CharField(max_length=50)
+    type_test = models.CharField(max_length=50)
+    subject1 = models.CharField(max_length=150, blank=True, null=True)
+    subject2 = models.CharField(max_length=150, blank=True, null=True)
     right_answers = models.IntegerField()
     count_of_questions = models.IntegerField()
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="history")
 
     def __str__(self):
-        return self.name
+        return self.type_test

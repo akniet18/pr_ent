@@ -12,16 +12,22 @@ class RegisterSerializer(serializers.Serializer):
 
 
 class historySerializerCreate(serializers.Serializer):
-    subject = serializers.CharField()
+    subject1 = serializers.CharField()
+    subject2 = serializers.CharField(required=False)
     right_answers = serializers.CharField()
 
 class historySerializer(serializers.ModelSerializer):
     class Meta:
         model = history
         fields = "__all__"
+        read_only_fields = ("type_test", "count_of_questions", "user")
 
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('nickname', 'email', 'uin')
+
+
+class FeedbackSer(serializers.Serializer):
+    text = serializers.CharField()

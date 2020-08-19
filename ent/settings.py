@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 
     'entapp',
-    'users'
+    'users',
+    'online_course'
 ]
 
 MIDDLEWARE = [

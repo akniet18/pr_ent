@@ -40,3 +40,12 @@ class Question(models.Model):
     def count_variant(self):
         al = self.question_variant.all()
         return len(al)
+
+
+
+class FeedBack(models.Model):
+    text = models.TextField()
+    user = models.ForeignKey("users.User", on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return self.text
