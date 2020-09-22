@@ -135,7 +135,7 @@ class UserView(APIView):
 
     def get(self, request, id):
         queryset = User.objects.get(id=id)
-        s = UserSerializer(queryset)
+        s = UserSerializer(queryset, context={'request': request})
         return Response(s.data)
 
     def post(self, request, id):
@@ -151,6 +151,22 @@ class UserView(APIView):
             user.save()
             s = UserSerializer(user)
             return Response(s.data)
+        else:
+            return Response(s.errors)
+
+
+class Avatar(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def post(self, request):
+        s = AvatarSerializer(data=request.data)
+        if s.is_valid():
+            ava = s.validated_data['avatar']
+            img = base64img(ava, 'avatar')
+            avatar = compress_image(img, (200, 200))
+            request.user.avatar = avatar
+            request.user.save()
+            return Response({'status': "ok", "avatar": request.user.avatar.url})
         else:
             return Response(s.errors)
 

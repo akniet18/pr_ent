@@ -24,10 +24,17 @@ class historySerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
+    avatar = serializers.SerializerMethodField('get_avatar_url')
+    def get_avatar_url(self, obj):
+        return self.context['request'].build_absolute_uri(obj.avatar.url)
     class Meta:
         model = User
-        fields = ('nickname', 'email', 'uin')
+        fields = ('id', 'nickname', 'email', 'uin', 'avatar')
 
 
 class FeedbackSer(serializers.Serializer):
     text = serializers.CharField()
+
+
+class AvatarSerializer(serializers.Serializer):
+    avatar = serializers.CharField()
