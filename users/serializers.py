@@ -32,6 +32,12 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id', 'nickname', 'email', 'uin', 'avatar')
 
 
+class ChangeUserSerializer(serializers.Serializer):
+    nickname = serializers.CharField(required=False)
+    email = serializers.CharField(required=False)
+    uin = serializers.CharField(required=False)
+
+
 class FeedbackSer(serializers.Serializer):
     text = serializers.CharField()
 

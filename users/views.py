@@ -139,7 +139,7 @@ class UserView(APIView):
         return Response(s.data)
 
     def post(self, request, id):
-        s = UserSerializer(data=request.data)
+        s = ChangeUserSerializer(data=request.data)
         if s.is_valid():
             user = User.objects.get(id=id)
             # user.first_name = s.validated_data.get('first_name', user.first_name)
@@ -149,7 +149,7 @@ class UserView(APIView):
             if email != user.email and email:
                 user.email = email
             user.save()
-            s = UserSerializer(user)
+            s = UserSerializer(user, context={'request': request})
             return Response(s.data)
         else:
             return Response(s.errors)
