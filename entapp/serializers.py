@@ -45,3 +45,8 @@ class AnswerOneSer(serializers.Serializer):
 class passEntSer(serializers.Serializer):
     sub_id1 = serializers.IntegerField()
     sub_id2 = serializers.IntegerField()
+
+
+class ExtensionSer(serializers.Serializer):
+    images = serializers.ListField(child=serializers.CharField(), required=False)
+    question = serializers.CharField()

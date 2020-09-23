@@ -11,7 +11,7 @@ from django.db.models import Count
 import random
 from django.http import JsonResponse
 import json
-
+from utils.compress import *
 
 def get_random_question(subject, default=False):
     if default:
@@ -92,3 +92,21 @@ class Answers(APIView):
         questions = subject.test_subject.all()
         s = TestSer2(questions, many=True,context={'request': request})
         return Response(s.data)
+
+
+
+class Extension(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def post(self, request):
+        s = ExtensionSer(data=request.data)
+        if s.is_valid():
+            question = s.validated_data['question']
+            images = s.validated_data['images']
+            for i in images:
+                im = base64img(i, request.user.id)
+                img = compress_image(im, (200, 200))
+                
+            return Response({"status": "ok"})
+        else:
+            return Response(s.errors)
