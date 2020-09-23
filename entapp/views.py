@@ -4,6 +4,7 @@ from .models import *
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import permissions
+from rest_framework.decorators import permission_classes
 from rest_framework.authentication import TokenAuthentication
 from django.contrib.auth.models import User
 from django.db.models import Count
@@ -39,7 +40,7 @@ class pass_oneSubject(APIView):
             questions = get_random_question(subject, True)
         else:
             questions = get_random_question(subject)
-        s = TestSer(questions, many=True)
+        s = TestSer(questions, many=True, context={'request': request})
         return Response(s.data)
 
 
@@ -54,22 +55,22 @@ class pass_ENT(APIView):
             def_sbj2 = Subject.objects.get(id = 2)
             def_sbj3 = Subject.objects.get(id = 3)
             math_log = get_random_question(def_sbj1, True)
-            math_log = TestSer(math_log, many=True)
+            math_log = TestSer(math_log, many=True, context={'request': request})
             history = get_random_question(def_sbj2, True)
-            history = TestSer(history, many=True)
+            history = TestSer(history, many=True, context={'request': request})
             literacy = get_random_question(def_sbj3, True)
-            literacy = TestSer(literacy, many=True)
+            literacy = TestSer(literacy, many=True, context={'request': request})
             # choosen subjects
             # 1
             sub_id1 = s.validated_data['sub_id1']
             subject = Subject.objects.get(id = sub_id1)
             first_sbj = get_random_question(subject)
-            first_sbj = TestSer(first_sbj, many=True)
+            first_sbj = TestSer(first_sbj, many=True, context={'request': request})
             # 2
             sub_id2 = s.validated_data['sub_id2']
             subject = Subject.objects.get(id = sub_id2)
             second_sbj = get_random_question(subject)
-            second_sbj = TestSer(second_sbj, many=True)
+            second_sbj = TestSer(second_sbj, many=True, context={'request': request})
             data = {
                 'math_log': math_log.data,
                 'history': history.data,
@@ -80,3 +81,14 @@ class pass_ENT(APIView):
             return Response(data)
         else:
             return Response(s.errors)
+            
+
+
+class Answers(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request, id):
+        subject = Subject.objects.get(id = id)
+        questions = subject.test_subject.all()
+        s = TestSer2(questions, many=True,context={'request': request})
+        return Response(s.data)

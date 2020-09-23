@@ -6,7 +6,7 @@ class Subject(models.Model):
     name = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name
+        return str(self.id) + " - " +  self.name
     
 
 def test_photos_dir(instance, filename):
@@ -27,19 +27,22 @@ class question_variant(models.Model):
     question = models.ForeignKey("Question", on_delete=models.CASCADE, related_name="question_variant", null=True)
 
     def __str__(self):
-        return self.text
+        return str(self.id) + " - " + self.text
 
 class Question(models.Model):
     text = models.TextField()
     subject = models.ForeignKey("Subject", on_delete=models.CASCADE, related_name="test_subject")
 
     def __str__(self):
-        return self.text
+        return str(self.id) + " - " +  self.text
 
     
     def count_variant(self):
         al = self.question_variant.all()
         return len(al)
+
+    def rights(self):
+        return self.question_variant.filter(is_right=True)
 
 
 

@@ -10,6 +10,9 @@ class SubjectSer(serializers.ModelSerializer):
         fields = "__all__"
 
 class PhotoSer(serializers.ModelSerializer):
+    photo = serializers.SerializerMethodField('get_avatar_url')
+    def get_avatar_url(self, obj):
+        return self.context['request'].build_absolute_uri(obj.photo.url)
     class Meta:
         model = TestPhoto()
         fields = "__all__"
@@ -25,6 +28,13 @@ class TestSer(serializers.ModelSerializer):
     class Meta:
         model = Question()
         fields = "__all__"
+
+class TestSer2(serializers.ModelSerializer):
+    rights = VariantSer(many=True)
+    question_photo = PhotoSer(many=True)
+    class Meta:
+        model = Question()
+        fields = ('text', 'rights', 'question_photo')
 
 
 class AnswerOneSer(serializers.Serializer):

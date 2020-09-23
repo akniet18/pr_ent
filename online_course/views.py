@@ -14,7 +14,7 @@ from datetime import datetime
 class OnlineCourseView(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
-    def get(self, request):
-        queryset = OnlineCourse.objects.all()
-        ser = OnlineCourseSerializer(queryset, many=True)
+    def get(self, request, id):
+        queryset = OnlineCourse.objects.filter(type_cours = id)
+        ser = OnlineCourseSerializer(queryset, many=True, context={'request': request})
         return Response(ser.data)
