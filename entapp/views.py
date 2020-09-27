@@ -44,7 +44,7 @@ class pass_oneSubject(APIView):
         else:
             questions = get_random_question(subject)
         s = TestSer(questions, many=True, context={'request': request})
-        return Response(s.data)
+        return Response({'data': s.data, "subject": subject.name})
 
 
 class pass_ENT(APIView):
@@ -66,20 +66,20 @@ class pass_ENT(APIView):
             # choosen subjects
             # 1
             sub_id1 = s.validated_data['sub_id1']
-            subject = Subject.objects.get(id = sub_id1)
-            first_sbj = get_random_question(subject)
+            subject1 = Subject.objects.get(id = sub_id1)
+            first_sbj = get_random_question(subject1)
             first_sbj = TestSer(first_sbj, many=True, context={'request': request})
             # 2
             sub_id2 = s.validated_data['sub_id2']
-            subject = Subject.objects.get(id = sub_id2)
-            second_sbj = get_random_question(subject)
+            subject2 = Subject.objects.get(id = sub_id2)
+            second_sbj = get_random_question(subject2)
             second_sbj = TestSer(second_sbj, many=True, context={'request': request})
             data = {
                 'math_log': math_log.data,
                 'history': history.data,
                 "literacy": literacy.data,
-                'sub1': first_sbj.data,
-                'sub2': second_sbj.data
+                'sub1': {'data':first_sbj.data, "subject": subject1.name},
+                'sub2': {'data':second_sbj.data, "subject": subject2.name}
             }
             return Response(data)
         else:
