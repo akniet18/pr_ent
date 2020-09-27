@@ -12,6 +12,9 @@ import random
 from django.http import JsonResponse
 import json
 from utils.compress import *
+from django.core.mail import EmailMultiAlternatives
+from email.mime.image import MIMEImage
+
 
 def get_random_question(subject, default=False):
     if default:
@@ -95,18 +98,35 @@ class Answers(APIView):
 
 
 
+def logo_data(logo_data):
+    logo = MIMEImage(logo_data)
+    logo.add_header('Content-ID', '<logo>')
+    return logo
 class Extension(APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request):
         s = ExtensionSer(data=request.data)
         if s.is_valid():
-            question = s.validated_data['question']
-            images = s.validated_data['images']
-            for i in images:
-                im = base64img(i, request.user.id)
-                img = compress_image(im, (200, 200))
+            if request.user.is_paid:
+                question = s.validated_data['question']
+                images = s.validated_data['images']                
+                receiver_email = "akniet1805@gmail.com"
                 
-            return Response({"status": "ok"})
+                m = EmailMultiAlternatives(
+                    subject="subject",
+                    body=question,
+                    from_email='bilimcenter20@gmail.com',
+                    to=[receiver_email]
+                )
+                for i in images:
+                    im = base64img(i, str(request.user.id)+request.user.phone)
+                    img = compress_image(im, (200, 200))
+                    m.attach(logo_data(img.read()))
+
+                m.send(fail_silently=False)
+                return Response({"status": "ok"})
+            else:
+                return Response({'status': 'not paid'})
         else:
             return Response(s.errors)

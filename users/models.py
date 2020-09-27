@@ -91,6 +91,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     # is_checked = models.BooleanField(default=False)
     is_moder = models.BooleanField(default=False)
+    is_paid = models.BooleanField(default=False)
 
     #--------------------------------------------------------
     created_at = models.DateTimeField(auto_now_add=True)

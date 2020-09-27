@@ -17,6 +17,7 @@ from rest_framework.generics import RetrieveUpdateDestroyAPIView, GenericAPIView
 from datetime import datetime
 from entapp.models import *
 from utils.compress import *
+from django.core.mail import send_mail
 # from django_auto_prefetching import AutoPrefetchViewSetMixin
 
 
@@ -172,27 +173,38 @@ class Avatar(APIView):
             return Response(s.errors)
 
 
-import ssl, smtplib
+# import ssl, smtplib
+
 class FeedBackView(APIView):
-    permission_classes = (permissions.AllowAny,)
+    permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request):
         s = FeedbackSer(data=request.data)
         if s.is_valid():
-            port = 465  # For starttls
-            smtp_server = "smtp.gmail.com"
-            sender_email = "bilimcenter20@gmail.com"
-            receiver_email = "akniet1805@gmail.com"
-            password = "Bilim20centre20"
             message = s.validated_data['text']
-            if request.user.is_authenticated:
-                message += "\n\n" + "phone: " + request.user.phone + "\nemail: " + request.user.email
-            
-            context = ssl.create_default_context()
-            with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-                server.login(sender_email, password)
-                server.sendmail(sender_email, receiver_email, message)
+            message += "\n\n" + "phone: " + request.user.phone + "\nemail: " + request.user.email
+            receiver_email = "akniet1805@gmail.com"
+            send_mail(
+                'Subject here',
+                message,
+                'bilimcenter20@gmail.com',
+                [receiver_email, ],
+                fail_silently=False,
+            )
             return Response({'status': 'ok'})
+            
+            # port = 465  # For starttls
+            # smtp_server = "smtp.gmail.com"
+            # sender_email = "bilimcenter20@gmail.com"
+            # password = "Bilim20centre20"
+            # message = s.validated_data['text']
+            # if request.user.is_authenticated:
+            #     message += "\n\n" + "phone: " + request.user.phone + "\nemail: " + request.user.email
+            
+            # context = ssl.create_default_context()
+            # with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            #     server.login(sender_email, password)
+            #     server.sendmail(sender_email, receiver_email, message)
         else:
             return Response(s.errors)
 
