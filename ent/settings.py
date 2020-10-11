@@ -47,9 +47,7 @@ INSTALLED_APPS = [
     'online_course'
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_ALL_ORIGINS = True
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,6 +63,9 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'ent.urls'
 AUTH_USER_MODEL = 'users.User'
 APPEND_SLASH=False
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 TEMPLATES = [
     {
@@ -161,6 +162,7 @@ EMAIL_HOST_PASSWORD = 'Bilim20centre20'
 
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
+
 
 
 # Static files (CSS, JavaScript, Images)
