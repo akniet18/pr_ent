@@ -18,7 +18,7 @@ class TestPhoto(models.Model):
     question = models.ForeignKey("Question", on_delete=models.CASCADE, related_name="question_photo", null=True)
 
     def __str__(self):
-        return self.question.text
+        return f'{self.question.id}'
 
 
 class question_variant(models.Model):
@@ -27,14 +27,14 @@ class question_variant(models.Model):
     question = models.ForeignKey("Question", on_delete=models.CASCADE, related_name="question_variant", null=True)
 
     def __str__(self):
-        return str(self.id) + " - " + self.text
+        return f'q: {self.question.id} - {self.id} - self.text'
 
 class Question(models.Model):
     text = models.TextField()
     subject = models.ForeignKey("Subject", on_delete=models.CASCADE, related_name="test_subject")
 
     def __str__(self):
-        return str(self.id) + " - " +  self.text
+        return f's: {self.subject.id} - {self.id} - self.text'
 
     
     def count_variant(self):
