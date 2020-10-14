@@ -143,4 +143,4 @@ class history(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="history")
 
     def __str__(self):
-        return self.type_test
+        return f"{self.type_test} - {self.user.phone} - {self.user.id}"
