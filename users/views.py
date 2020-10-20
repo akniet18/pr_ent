@@ -18,6 +18,8 @@ from datetime import datetime
 from entapp.models import *
 from utils.compress import *
 from django.core.mail import send_mail
+from django.conf import settings
+
 # from django_auto_prefetching import AutoPrefetchViewSetMixin
 
 
@@ -187,7 +189,7 @@ class FeedBackView(APIView):
             send_mail(
                 'Subject here',
                 message,
-                'bilimcenter20@gmail.com',
+                settings.EMAIL_HOST_USER,
                 [receiver_email, ],
                 fail_silently=False,
             )
