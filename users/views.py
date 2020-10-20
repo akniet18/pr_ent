@@ -71,7 +71,7 @@ class Register(APIView):
                     us.nickname = nickname
                     us.save()
                 else:
-                    us = User.objects.create(phone=phone)
+                    us = User.objects.create(phone=phone, nickname = nickname)
                     uid = us.pk
                 if Token.objects.filter(user=us).exists():
                     token = Token.objects.get(user=us)
