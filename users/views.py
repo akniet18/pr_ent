@@ -68,8 +68,8 @@ class Register(APIView):
                 if User.objects.filter(phone=phone).exists():
                     us = User.objects.get(phone=phone)
                     uid = us.pk
-                    # us.nickname = nickname
-                    # us.save()
+                    us.nickname = nickname
+                    us.save()
                 else:
                     us = User.objects.create(phone=phone)
                     uid = us.pk
