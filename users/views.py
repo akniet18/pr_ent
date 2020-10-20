@@ -184,7 +184,9 @@ class FeedBackView(APIView):
         s = FeedbackSer(data=request.data)
         if s.is_valid():
             message = s.validated_data['text']
-            message += "\n\n" + "phone: " + request.user.phone + "\nemail: " + request.user.email
+            message += "\n\n" + "phone: " + request.user.phone
+            if request.user.email:
+                message += "\nemail: " + request.user.email
             receiver_email = "akniet1805@gmail.com"
             send_mail(
                 'Subject here',
