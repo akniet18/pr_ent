@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from ckeditor.fields import RichTextField
 
 
 class Subject(models.Model):
@@ -22,7 +23,7 @@ class TestPhoto(models.Model):
 
 
 class question_variant(models.Model):
-    text = models.TextField()
+    text = RichTextField()
     is_right = models.BooleanField(default=False)
     question = models.ForeignKey("Question", on_delete=models.CASCADE, related_name="question_variant", null=True)
 
@@ -30,7 +31,7 @@ class question_variant(models.Model):
         return f'q: {self.question.id} - {self.id} - self.text'
 
 class Question(models.Model):
-    text = models.TextField()
+    text = RichTextField()
     subject = models.ForeignKey("Subject", on_delete=models.CASCADE, related_name="test_subject")
 
     def __str__(self):

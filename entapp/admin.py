@@ -1,5 +1,13 @@
 from django.contrib import admin
 from .models import *
+from django import forms
+from ckeditor.widgets import CKEditorWidget
+
+class PostAdminForm(forms.ModelForm):
+    text = forms.CharField(widget=CKEditorWidget())
+    class Meta:
+        model = question_variant
+        fields = '__all__'
 
 class SubjectAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
@@ -8,11 +16,13 @@ class VariantInline(admin.TabularInline):
     model = question_variant
 
 class QuestionAdmin(admin.ModelAdmin):
+    form = PostAdminForm
     list_display = ('id', 'text', 'subject')
     list_filter = ('subject', )
     inlines = [VariantInline]
 
 class Variant(admin.ModelAdmin):
+    form = PostAdminForm
     list_display = ('id', 'text', 'is_right', 'question')
 
 

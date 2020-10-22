@@ -7,7 +7,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ent/', include('entapp.urls')),
     path('users/', include('users.urls')),
-    path('online_course/', include('online_course.urls'))
+    path('online_course/', include('online_course.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG: 
