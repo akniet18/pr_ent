@@ -187,12 +187,11 @@ class FeedBackView(APIView):
             message += "\n\n" + "phone: " + request.user.phone
             if request.user.email:
                 message += "\nemail: " + request.user.email
-            receiver_email = "akniet1805@gmail.com"
             send_mail(
                 'Subject here',
                 message,
                 settings.EMAIL_HOST_USER,
-                [receiver_email, ],
+                [settings.EMAIL_HOST_USER, ],
                 fail_silently=False,
             )
             return Response({'status': 'ok'})
