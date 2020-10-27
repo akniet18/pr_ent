@@ -20,6 +20,7 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('id', 'text', 'subject')
     list_filter = ('subject', )
     inlines = [VariantInline]
+    search_fields = ('text',)
 
 class Variant(admin.ModelAdmin):
     form = PostAdminForm

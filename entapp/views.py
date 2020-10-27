@@ -131,3 +131,38 @@ class Extension(APIView):
                 # return Response({'status': 'not paid'})
         else:
             return Response(s.errors)
+
+
+from io import BytesIO
+import json
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+class loadtest(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request):
+        s = loadtetsSer(data=request.data)
+        if s.is_valid():
+            dataf = s.validated_data['dataf']
+            with open(os.path.join(BASE_DIR, 'entapp/fixtures/'+dataf)) as json_file:
+                data = json.load(json_file)
+                sub = Subject.objects.get(id=data['subject'])
+                for i in data['data']:
+                    q = Question.objects.filter(text = i['title'], subject = sub)
+                    if q.exists():
+                        print("yes")
+                    else:
+                        q = Question.objects.create(text = i['title'], subject = sub)
+                        question_variant.objects.create(text=i['A'], question = q)
+                        question_variant.objects.create(text=i['B'], question = q)
+                        question_variant.objects.create(text=i['C'], question = q)
+                        question_variant.objects.create(text=i['D'], question = q)
+                        question_variant.objects.create(text=i['E'], question = q)
+                        if 'F' in i:
+                            question_variant.objects.create(text=i['F'], question = q)
+                            question_variant.objects.create(text=i['G'], question = q)
+                            question_variant.objects.create(text=i['H'], question = q)
+            return Response({'status': 'ok'})
+        else:
+            return Response(s.errors)

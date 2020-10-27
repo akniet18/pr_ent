@@ -50,3 +50,7 @@ class passEntSer(serializers.Serializer):
 class ExtensionSer(serializers.Serializer):
     images = serializers.ListField(child=serializers.CharField(), required=False)
     question = serializers.CharField()
+
+
+class loadtetsSer(serializers.Serializer):
+    dataf = serializers.CharField()
