@@ -26,10 +26,7 @@ SECRET_KEY = 'f4#=x%x8eqmpe(le#40ik+5e=pc@-^9(5^c%jbfp$8lqwb2h-s'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +44,7 @@ INSTALLED_APPS = [
     'online_course',
     'ckeditor',
     'ckeditor_uploader',
+    
 ]
 
 
