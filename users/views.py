@@ -17,8 +17,10 @@ from rest_framework.generics import RetrieveUpdateDestroyAPIView, GenericAPIView
 from datetime import datetime
 from entapp.models import *
 from utils.compress import *
+from utils.smsc_api import SMSC
 from django.core.mail import send_mail
 from django.conf import settings
+smsc = SMSC()
 
 # from django_auto_prefetching import AutoPrefetchViewSetMixin
 
@@ -45,6 +47,7 @@ class PhoneCode(APIView):
                 PhoneOTP.objects.create(phone=phone, otp=str(rand), nickname=nickname)
                 # PhoneOTP.objects.create(phone=phone, nickname=nickname, otp=str(1111))
             # smsc.send_sms(s.validated_data['phone'], "Код подтверждения: "+str(rand) + " Fixup", sender="sms")
+            smsc.send_sms(phone, "Код подтверждения для BilimAcademic: "+str(rand), sender="sms")
             return Response({'status': 'ok'})
         else:
             return Response(s.errors)
