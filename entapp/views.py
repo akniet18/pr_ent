@@ -19,15 +19,20 @@ from django.conf import settings
 
 def get_random_question(subject, default=False):
     if default:
-        questions = list(subject.test_subject.all())
+        questions = list(subject.test_subject.all().distinct('text'))
         random.shuffle(questions)
         questions = questions[:20]
         return questions
     else:
-        questions1 = list(subject.test_subject.annotate(number_of_answers=Count('question_variant')).filter(number_of_answers = 5))
+        q = subject.test_subject.all().distinct('text')
+        questions1 = list(subject.test_subject.annotate(
+            number_of_answers=Count('question_variant')).filter(number_of_answers = 5, id__in=q)
+        )
         random.shuffle(questions1)
         questions1 = questions1[:20]
-        questions2 = list(subject.test_subject.annotate(number_of_answers=Count('question_variant')).filter(number_of_answers = 8))
+        questions2 = list(subject.test_subject.annotate(
+            number_of_answers=Count('question_variant')).filter(number_of_answers = 8, id__in=q)
+        )
         random.shuffle(questions2)
         questions2 = questions2[:10]
         questions = questions1 + questions2
