@@ -8,5 +8,7 @@ urlpatterns = [
     path('<id>/', UserView.as_view()),
     path('avatar', Avatar.as_view()),
     
-    path('feedback', FeedBackView.as_view())
+    path('feedback', FeedBackView.as_view()),
+
+    path("private/policy", privatepolicy)
 ]
