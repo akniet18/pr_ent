@@ -158,7 +158,7 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'bilimcentre@gmail.com'
-EMAIL_HOST_PASSWORD = 'Bilim20centre20'
+EMAIL_HOST_PASSWORD = 'xcuwcalznqzajpaj'
 EMAIL_PORT = 587
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
