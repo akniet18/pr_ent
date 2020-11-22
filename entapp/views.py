@@ -98,7 +98,7 @@ class Answers(APIView):
 
     def get(self, request, id):
         subject = Subject.objects.get(id = id)
-        questions = subject.test_subject.all()
+        questions = list(subject.test_subject.all())
         random.shuffle(questions)
         questions = questions[:30]
         s = TestSer2(questions, many=True,context={'request': request})
