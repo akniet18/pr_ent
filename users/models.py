@@ -59,7 +59,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     password1 = models.CharField(max_length=20, blank=True, null=True)
     password2 = models.CharField(max_length=20, blank=True, null=True)
     email = models.EmailField(max_length=255, unique=True, blank=True, null=True)
-    nickname = models.CharField(max_length=15, blank=True, null=True)
+    nickname = models.CharField(max_length=150, blank=True, null=True)
     birth_date = models.DateField(null=True, blank=True,
                                 auto_now=False,
                                 auto_now_add=False)
@@ -124,8 +124,8 @@ class PhoneOTP(models.Model):
     # phone_regex = RegexValidator( regex = r'^\+?1?\d{7,12}$',
     # message = "Phone number in the format '+77777777'. Up to 12 digits")
     # phone = models.CharField(max_length=12,validators = [phone_regex], unique=True)
-    phone = models.CharField(max_length = 12, unique = True)
-    nickname = models.CharField(max_length=30, blank=True, null=True)
+    phone = models.CharField(max_length = 15, unique = True)
+    nickname = models.CharField(max_length=300, blank=True, null=True)
     otp = models.CharField(max_length=9, blank=True, null=True)
     validated = models.BooleanField(default=False, help_text = 'True means user has a validated otp correctly in second API')
 
