@@ -26,9 +26,13 @@ class Variant(admin.ModelAdmin):
     form = PostAdminForm
     list_display = ('id', 'text', 'is_right', 'question')
 
+class IMG(admin.ModelAdmin):
+    list_display = ('id', 'question')
+    list_filter = ('question', )
+
 
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(question_variant, Variant)
-admin.site.register(TestPhoto)
+admin.site.register(TestPhoto, IMG)
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(FeedBack)
