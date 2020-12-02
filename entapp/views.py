@@ -22,7 +22,10 @@ def get_random_question(subject, default=False):
         if subject.id == 2:
             questions = list(subject.test_subject.all())
             random.shuffle(questions)
-            questions = questions[:20]
+            l = len(questions)
+            l = l // 20
+            r = random.randint(0, l-1)
+            questions = questions[r*20, (r+1)*20]
             return questions
         else:
             questions = list(subject.test_subject.all().distinct('text'))
