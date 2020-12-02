@@ -28,7 +28,7 @@ class Variant(admin.ModelAdmin):
 
 class IMG(admin.ModelAdmin):
     list_display = ('id', 'question')
-    list_filter = ('question', )
+    search_fields = ('question',)
 
 
 admin.site.register(Subject, SubjectAdmin)
