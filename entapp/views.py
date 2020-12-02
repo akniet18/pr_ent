@@ -25,7 +25,7 @@ def get_random_question(subject, default=False):
             question = []
             two, four, six, eight = False, False, False, False
             for i in questions:
-                q = list(subject.test_subject.filter(text=i.text))
+                q = list(subject.test_subject.filter(text=i.text).distinct('question_variant'))
                 if len(q) == 2 and two==False:
                     question += q
                     two = True
