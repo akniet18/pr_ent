@@ -20,27 +20,10 @@ from django.conf import settings
 def get_random_question(subject, default=False):
     if default:
         if subject.id == 2:
-            questions = list(subject.test_subject.all().distinct('text'))
+            questions = list(subject.test_subject.all())
             random.shuffle(questions)
-            question = []
-            two, four, six, eight = False, False, False, False
-            for i in questions:
-                q = list(subject.test_subject.filter(text=i.text).distinct('question_variant'))
-                if len(q) == 2 and two==False:
-                    question += q
-                    two = True
-                if len(q) == 4 and four == False:
-                    question += q
-                    four = True
-                if len(q) == 6 and six == False:
-                    question += q
-                    six = True
-                if len(q) == 8 and eight == False:
-                    question += q
-                    eight = True    
-                if two and four and six and eight:
-                    break        
-            return question
+            questions = questions[:20]
+            return questions
         else:
             questions = list(subject.test_subject.all().distinct('text'))
             random.shuffle(questions)
