@@ -21,7 +21,6 @@ def get_random_question(subject, default=False):
     if default:
         if subject.id == 2:
             questions = list(subject.test_subject.all())
-            random.shuffle(questions)
             l = len(questions)
             l = l // 20
             r = random.randint(0, l-1)
