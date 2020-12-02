@@ -22,7 +22,6 @@ def get_random_question(subject, default=False):
         if subject.id == 2:
             questions = list(subject.test_subject.all().distinct('text'))
             random.shuffle(questions)
-            questions = questions[:20]
             question = []
             two, four, six, eight = False, False, False, False
             for i in questions:
@@ -38,7 +37,9 @@ def get_random_question(subject, default=False):
                     six = True
                 if len(q) == 8 and eight == False:
                     question += q
-                    eight = True            
+                    eight = True    
+                if two and four and six and eight:
+                    break        
             return question
         else:
             questions = list(subject.test_subject.all().distinct('text'))
